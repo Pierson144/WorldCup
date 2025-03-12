@@ -1,0 +1,173 @@
+---
+title: "Introduction to Data Science - Homework"
+author: "First Name Last name - `flastname@floridapoly.edu`"
+output:
+  html_document:
+    df_print: paged
+---
+# **ANSWERS AT BOTTOM**
+
+
+
+> The purpose of this assignment is to practice some of the skills you have gained in the course for exploring data and generating a data analysis.
+
+# Part 1 (Select a dataset of your choice)
+
+In this part of the assignment you are asked to select any dataset of your choice to later perform some **exploratory data analysis**. 
+
+**Deliverable:** simply mention the dataset you are interested in exploring, commenting on the source of the data, and discussing some of the attributes available in the dataset. 
+
+
+Below you are presented with several options to help you select a dataset. 
+
+### GitHub Repo: [`reisanar/datasets/`](https://github.com/reisanar/datasets) 
+
+You can choose one of the different datasets listed below from the `reisanar/datasets/` GitHub repo:
+
+ name               | description
+--------------------|--------------------------------------------------------
+`all_billboard_summer_hits.csv` |	(Spotify) audio features for Billboard summer hits 1958-2017
+`WorldCupMatches.csv`	| world cup matches statistics
+`netflixShows.csv`  | ratings for Netflix shows
+`harvardMIT.csv`		| stats on online courses offered by HarvardX and MITx
+`SleepStudy.csv`    | Data on study of sleep patterns for college students
+`tpa_weather_16_17.csv` | Tampa weather in 2016-2017
+
+Descriptions are included below:
+
+
+- `all_billboard_summer_hits.csv`: Songs that were part of the Billboard Summer Hits list from 1958 to 2017. Dataset includes music features as provided by the Spotify API, including the "acousticness" and "danceability" of the song, and measurements of valence, tempo, among other audio features. A description of the features can be found at <https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/>
+
+- `WorldCupMatches.csv`: World Cup Matches dataset shows all the results from the matches contested as part of the different editions of the tournament. You can also complement this dataset with the information in `worldcup.csv` that includes statistics for every player that participated in FIFA 2010 world-cup. 
+
+- `netflixShows.csv`: Understanding the rating distributions of a variety of Netflix shows. Information for shows is provided including viewer ratings, Motion Picture Association of America film rating system that rates a film's suitability for certain audiences based on its content, release year, and others.
+
+- `harvardMIT.csv`: In 2012, the Massachusetts Institute of Technology (MIT) and Harvard University launched open online courses on edX, a non-profit learning platform co-founded by the two institutions. Data contains information on 290 Harvard and MIT online courses, 250 thousand certifications, 4.5 million participants, and 28 million participant hours on the edX platform since 2012.
+
+- `SleepStudy.csv`: Data from a study of sleep patterns for college students. Obtained from sample of students who did skills tests to measure cognitive function, completed a survey that asked many questions about attitudes and habits, and kept a sleep diary to record time and quality of sleep over a two week period.
+
+- `tpa_weather_16_17.csv`: Weather data obtained from FSU's Florida Climate Center, for a station at Tampa International Airport (TPA) from 2016 to 2017.
+
+
+
+**NOTE:** All datasets can be accessed the way we have practiced in class. For example:
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+myurl  <- "https://raw.githubusercontent.com/reisanar/datasets/master/all_grammy.csv"
+mydata <- read_csv(myurl)
+```
+
+
+```{r}
+
+```
+
+
+
+### `pudding.cool` [data stories](https://github.com/the-pudding/data)
+
+Data from `pudding.cool`'s stories. Check a of available datasets [here](https://github.com/the-pudding/data)
+For example, to read the data associated to the article ["Greetings from Mars"](https://pudding.cool/2018/01/mars-weather/), you could use
+
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+mars <- read_csv("https://github.com/the-pudding/data/raw/master/mars-weather/mars-weather.csv")
+```
+
+
+### R4DS [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)
+
+Data from `Tidy Tuesday`'s challenges. Check a list [here](https://github.com/rfordatascience/tidytuesday). For example to use the data from the ["Space Launches"](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-15) repo, you could use
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+launches <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-01-15/launches.csv")
+```
+
+
+
+If you cannot find a dataset of your interest from the options listed above, consider looking for data available through the resources listed at the end of this document. 
+
+
+
+
+
+
+# Part 2 (Formulate some preliminary questions)
+
+Utilizing the dataset chosen in Part 1, propose some questions that could be explored given the available attributes/variables. You may also want to check that you understand the definition of the different attributes/variables that are part of the dataset (what do they mean? how were they measured?)
+
+
+**Deliverable:** list 3-4 questions you can explore with the dataset of your choice. It is useful to also comment on any issues you anticipate you may run into when using the available data (for example: processing columns where the date information is encoded as a character, dealing with missing information in some of the observations, etc.)
+
+
+
+
+
+
+
+
+
+***
+
+### Additional Datasets
+
+Below is a list of additional data sources you may consider for your final project.
+
+- U.S. Government's open data. Find a dataset of interest at <https://catalog.data.gov/dataset>. There are thousands of datasets the Government makes available on topics including education, agriculture, law, safety, research, and more. 
+
+- BuzzFeedNews' index of all their open-source data, analysis, libraries, tools, and guides. Data, scripts, and related stories can be found at <https://github.com/BuzzFeedNews/everything>
+
+- ProPublica's data store. Topics include transportation, criminal justice, environment, finance, among others. Look for free data sets available at <https://www.propublica.org/datastore/datasets/>
+
+- The Bureau of Transportation Statistics (BTS), part of the Department of Transportation (DOT) is the preeminent source of statistics on commercial aviation, multimodal freight activity, and transportation economics, and provides context to decision makers and the public for understanding statistics on transportation. Find information at <https://www.bts.gov/browse-statistical-products-and-data>
+
+- The U.S. Bureau of Economic Analysis, a source of accurate and objective data about the nation's economy. Find information at <https://www.bea.gov/data>
+
+- National Center for Education Statistics (NCES) data products. NCES is the primary federal entity for collecting and analyzing data related to education in the U.S. and other nations. NCES is located within the U.S. Department of Education and the Institute of Education Sciences. Find more information at <https://nces.ed.gov/datatools/>
+
+- HealthData.gov. This site is dedicated to making data discoverable and making valuable government data available to the public in the hopes of better health outcomes for all. Explore datasets at <https://healthdata.gov/search/type/dataset>
+
+
+ANSWERS HERE
+```{r}
+library(tidyverse)
+wcurl  <- "https://raw.githubusercontent.com/reisanar/datasets/master/WorldCupMatches.csv"
+wcdata <- read.csv(wcurl)
+```
+
+
+```{r}
+head(wcdata)
+```
+```{r}
+glimpse(wcdata)
+```
+
+```{r}
+summary(wcdata)
+```
+
+I am using the World Cup dataset
+
+This data set is from professor Rei's github consisting of hundereds of other  datasets.
+
+This data set contains information about the years each world cup was played, the winners of each world cup; the amounts of points scored by each team, etc.
+
+
+Q1: Which team has the most goals each year?
+Q2: How high was the attendance on teams that scored the most goals combined home and away
+Q3:How many times were the away team up in goals by half time
+Q4:Do teams score more as a home team or an away team ?
+Worries: Too much categorical data;datetime scattered across multiple years may cause confusion; If a team is missing points it may make the data set harder to work with 
+
+Motivation:I saw the anime blue lock so I want to do a data set on the world cup to see the amount of goals scored
+
+Plan: I'll make graphs for each question comparing to see if one factor had sometype of influence over another factor.
+
+
+
+
+
